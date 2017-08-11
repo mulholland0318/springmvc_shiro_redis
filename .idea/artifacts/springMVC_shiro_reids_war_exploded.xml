@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="springMVC_shiro_reids:war exploded">
+    <output-path>$PROJECT_DIR$/target/springMVC_shiro_reids</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="springMVC_shiro_reids" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/springMVC_shiro_reids/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="springMVC_shiro_reids/web/Web" />
+    </root>
+  </artifact>
+</component>
