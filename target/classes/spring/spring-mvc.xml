@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+        <!--启用spring的一些annotation -->
+        <context:annotation-config/>
+
+    
+
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
+    <context:component-scan base-package="com.lug.controller">
+       <!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    </context:component-scan>
+
+    <!--静态资源映射-->
+    <!--本项目把静态资源放在了WEB-INF的statics目录下，资源映射如下-->
+    <mvc:resources mapping="/css/**" location="/statis/css/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/statis/js/"></mvc:resources>
+    <mvc:resources mapping="/imgage/**" location="/statis/image/"></mvc:resources>
+
+    <!-- 打开注解 request中的参数加入controller中-->
+    <mvc:annotation-driven/>
+    <mvc:view-controller path="/" view-name="forward:/index"/>
+    <mvc:view-controller path="/defaultIndex" view-name="/index"/>
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/index" />
+            <bean class="com.lug.interceptor.IndexInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix"  value="/WEB-INF/views/"/>
+        <property name="suffix"  value=".jsp"/>
+    </bean>
+
+    <bean id="multipartResolve" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="20971500"/>
+        <property name="resolveLazily" value="true"/>
+    </bean>
+</beans>
