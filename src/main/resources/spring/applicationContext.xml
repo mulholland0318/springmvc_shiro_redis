@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/aop
+      http://www.springframework.org/schema/aop/spring-aop.xsd
+      http://www.springframework.org/schema/tx
+      http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+        <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+                <property name="locations">
+                        <list>
+                                <value>classpath:db.properties</value>
+                        </list>
+                </property>
+
+        </bean>
+
+        <!---配置切面行为-->
+        <aop:config>
+                <aop:pointcut id="serviceOption" expression="execution(* com.lug.service..*.*(..))"/>
+                <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOption"/>
+        </aop:config>
+
+        <!--配置事务行为，配置需要事务的方法-->
+        <tx:advice id="txAdvice" transaction-manager="transactionManager">
+                <tx:attributes>
+                        <tx:method name="save*"   read-only="false" isolation="READ_COMMITTED" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+                        <tx:method name="update*" read-only="false" isolation="READ_COMMITTED" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+                        <tx:method name="insert*" read-only="false" isolation="READ_COMMITTED" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+                        <tx:method name="edit*"   read-only="false" isolation="READ_COMMITTED" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+                        <tx:method name="tran*"   read-only="false" isolation="READ_COMMITTED" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+                </tx:attributes>
+        </tx:advice>
+
+        <!--管理事物类-->
+        <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+                <property name="dataSource" ref="dataSource"/>
+
+
+        </bean>
+        <!--druid 配置数据源-->
+        <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+                <property name="driverClassName" value="${driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+                <property name="dbType" value="${dbType}"/>
+
+                <property name="initialSize" value="${initialSize}"/>
+                <property name="minIdle" value="${minIdle}"/>
+                <property name="maxActive" value="${maxActive}"/>
+                <!-- 配置获取连接等待超时的时间 -->
+                <property name="maxWait" value="${maxWait}"/>
+                <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+                <property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"/>
+
+                <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+                <property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}"/>
+
+                <property name="validationQuery" value="${validationQuery}"/>
+                <property name="testWhileIdle" value="${testWhileIdle}"/>
+                <property name="testOnBorrow" value="${testOnBorrow}"/>
+                <property name="testOnReturn" value="${testOnReturn}"/>
+
+                <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+                <property name="poolPreparedStatements" value="${poolPreparedStatements}"/>
+                <property name="maxPoolPreparedStatementPerConnectionSize" value="${maxPoolPreparedStatementPerConnection}"/>
+
+                <!--开启druid 访问数据统计 stat   配置监控统计拦截的filters-->
+                <property name="filters" value="log4j"/>
+                <property name="proxyFilters">
+                        <list>
+                                <ref bean="stat-filter"/>
+                                <ref bean="wall-filter"/>
+                        </list>
+                </property>
+        </bean>
+
+        <bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
+                <property name="mergeSql" value="true"/>
+                <property name="logSlowSql" value="true"/>
+                <!--sql执行超过5秒，代表该语句为慢sql-->
+                <property name="slowSqlMillis" value="5000"/>
+        </bean>
+        <!--防御SQL注入攻击-->
+        <bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
+                <property name="dbType" value="${dbType}"/>
+        </bean>
+</beans>

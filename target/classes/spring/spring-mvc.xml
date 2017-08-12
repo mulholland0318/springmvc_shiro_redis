@@ -19,13 +19,13 @@
 
     <!--静态资源映射-->
     <!--本项目把静态资源放在了WEB-INF的statics目录下，资源映射如下-->
-    <mvc:resources mapping="/css/**" location="/statis/css/"></mvc:resources>
-    <mvc:resources mapping="/js/**" location="/statis/js/"></mvc:resources>
-    <mvc:resources mapping="/imgage/**" location="/statis/image/"></mvc:resources>
+    <mvc:resources mapping="/css/**" location="/statis/css/"/>
+    <mvc:resources mapping="/js/**" location="/statis/js/"/>
+    <mvc:resources mapping="/imgage/**" location="/statis/image/"/>
 
     <!-- 打开注解 request中的参数加入controller中-->
     <mvc:annotation-driven/>
-    <mvc:view-controller path="/" view-name="forward:/index"/>
+    <mvc:view-controller path="/" view-name="forward:/login"/>
     <mvc:view-controller path="/defaultIndex" view-name="/index"/>
     <mvc:interceptors>
         <mvc:interceptor>

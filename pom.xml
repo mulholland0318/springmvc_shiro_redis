@@ -64,6 +64,28 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${sprint.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${sprint.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${sprint.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${sprint.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${sprint.version}</version>
+    </dependency>
+
+
 
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -108,6 +130,14 @@
       </dependency>
 
 
+
+
+      <!--链接池-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.1.2</version>
+    </dependency>
 
   </dependencies>
 
