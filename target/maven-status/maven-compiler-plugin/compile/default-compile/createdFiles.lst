@@ -1,2 +1,14 @@
 com\lug\controller\IndexController.class
+com\lug\model\Dept.class
+com\lug\controller\LoginAction.class
+com\lug\controller\LoginController.class
+com\lug\model\Role.class
+com\lug\service\BaseService.class
+com\lug\service\UserService.class
 com\lug\interceptor\IndexInterceptor.class
+com\lug\model\User.class
+com\lug\shiro\AuthReam.class
+com\lug\model\Module.class
+com\lug\constant\SysConstant.class
+com\lug\shiro\util\Encrypt.class
+com\lug\shiro\CommonMatcher.class

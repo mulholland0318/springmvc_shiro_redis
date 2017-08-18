@@ -1,0 +1,200 @@
+2017-08-18 12:40:20,800 [main] [io.netty.util.internal.logging.InternalLoggerFactory] [DEBUG] - Using SLF4J as the default logging framework
+2017-08-18 12:40:20,812 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - Platform: Windows
+2017-08-18 12:40:20,815 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - -Dio.netty.noUnsafe: false
+2017-08-18 12:40:20,816 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - Java version: 8
+2017-08-18 12:40:20,820 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - sun.misc.Unsafe.theUnsafe: available
+2017-08-18 12:40:20,821 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - sun.misc.Unsafe.copyMemory: available
+2017-08-18 12:40:20,822 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.Buffer.address: available
+2017-08-18 12:40:20,823 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - direct buffer constructor: available
+2017-08-18 12:40:20,824 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.Bits.unaligned: available, true
+2017-08-18 12:40:20,825 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2017-08-18 12:40:20,825 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.DirectByteBuffer.<init>(long, int): available
+2017-08-18 12:40:20,825 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - sun.misc.Unsafe: available
+2017-08-18 12:40:20,826 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.tmpdir: C:\Users\mm\AppData\Local\Temp (java.io.tmpdir)
+2017-08-18 12:40:20,826 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2017-08-18 12:40:20,827 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.noPreferDirect: false
+2017-08-18 12:40:20,827 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.maxDirectMemory: 1879048192 bytes
+2017-08-18 12:40:20,827 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2017-08-18 12:40:20,828 [main] [io.netty.util.internal.CleanerJava6] [DEBUG] - java.nio.ByteBuffer.cleaner(): available
+2017-08-18 12:40:21,907 [main] [org.redisson.Version] [INFO] - Redisson 3.4.4
+2017-08-18 12:40:21,918 [main] [io.netty.channel.MultithreadEventLoopGroup] [DEBUG] - -Dio.netty.eventLoopThreads: 8
+2017-08-18 12:40:21,983 [main] [io.netty.channel.nio.NioEventLoop] [DEBUG] - -Dio.netty.noKeySetOptimization: false
+2017-08-18 12:40:21,983 [main] [io.netty.channel.nio.NioEventLoop] [DEBUG] - -Dio.netty.selectorAutoRebuildThreshold: 512
+2017-08-18 12:40:21,987 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - org.jctools-core.MpscChunkedArrayQueue: available
+2017-08-18 12:40:22,093 [main] [io.netty.util.ResourceLeakDetector] [DEBUG] - -Dio.netty.leakDetection.level: simple
+2017-08-18 12:40:22,094 [main] [io.netty.util.ResourceLeakDetector] [DEBUG] - -Dio.netty.leakDetection.maxRecords: 4
+2017-08-18 12:40:22,094 [main] [io.netty.util.ResourceLeakDetectorFactory] [DEBUG] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@359f7cdf
+2017-08-18 12:40:22,270 [main] [io.netty.channel.DefaultChannelId] [DEBUG] - -Dio.netty.processId: 6024 (auto-detected)
+2017-08-18 12:40:22,273 [main] [io.netty.util.NetUtil] [DEBUG] - -Djava.net.preferIPv4Stack: false
+2017-08-18 12:40:22,273 [main] [io.netty.util.NetUtil] [DEBUG] - -Djava.net.preferIPv6Addresses: false
+2017-08-18 12:40:22,438 [main] [io.netty.util.NetUtil] [DEBUG] - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2017-08-18 12:40:22,439 [main] [io.netty.util.NetUtil] [DEBUG] - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+2017-08-18 12:40:22,577 [main] [io.netty.channel.DefaultChannelId] [DEBUG] - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2017-08-18 12:40:22,622 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.numHeapArenas: 8
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.numDirectArenas: 8
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.pageSize: 8192
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.maxOrder: 11
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.chunkSize: 16777216
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.tinyCacheSize: 512
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.smallCacheSize: 256
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.normalCacheSize: 64
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.cacheTrimInterval: 8192
+2017-08-18 12:40:22,623 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.useCacheForAllThreads: true
+2017-08-18 12:40:22,635 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.allocator.type: pooled
+2017-08-18 12:40:22,635 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.threadLocalDirectBufferSize: 65536
+2017-08-18 12:40:22,636 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2017-08-18 12:40:23,722 [redisson-netty-1-7] [org.redisson.connection.pool.MasterConnectionPool] [WARN] - host /127.0.0.1:6379 disconnected due to failedAttempts=3 limit reached
+2017-08-18 12:42:37,679 [main] [io.netty.util.internal.logging.InternalLoggerFactory] [DEBUG] - Using SLF4J as the default logging framework
+2017-08-18 12:42:37,683 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - Platform: Windows
+2017-08-18 12:42:37,687 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - -Dio.netty.noUnsafe: false
+2017-08-18 12:42:37,688 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - Java version: 8
+2017-08-18 12:42:37,692 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - sun.misc.Unsafe.theUnsafe: available
+2017-08-18 12:42:37,693 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - sun.misc.Unsafe.copyMemory: available
+2017-08-18 12:42:37,696 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.Buffer.address: available
+2017-08-18 12:42:37,699 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - direct buffer constructor: available
+2017-08-18 12:42:37,700 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.Bits.unaligned: available, true
+2017-08-18 12:42:37,700 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2017-08-18 12:42:37,700 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.DirectByteBuffer.<init>(long, int): available
+2017-08-18 12:42:37,700 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - sun.misc.Unsafe: available
+2017-08-18 12:42:37,701 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.tmpdir: C:\Users\mm\AppData\Local\Temp (java.io.tmpdir)
+2017-08-18 12:42:37,701 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2017-08-18 12:42:37,703 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.noPreferDirect: false
+2017-08-18 12:42:37,704 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.maxDirectMemory: 1879048192 bytes
+2017-08-18 12:42:37,704 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2017-08-18 12:42:37,705 [main] [io.netty.util.internal.CleanerJava6] [DEBUG] - java.nio.ByteBuffer.cleaner(): available
+2017-08-18 12:42:38,508 [main] [org.redisson.Version] [INFO] - Redisson 3.4.4
+2017-08-18 12:42:38,541 [main] [io.netty.channel.MultithreadEventLoopGroup] [DEBUG] - -Dio.netty.eventLoopThreads: 8
+2017-08-18 12:42:38,578 [main] [io.netty.channel.nio.NioEventLoop] [DEBUG] - -Dio.netty.noKeySetOptimization: false
+2017-08-18 12:42:38,578 [main] [io.netty.channel.nio.NioEventLoop] [DEBUG] - -Dio.netty.selectorAutoRebuildThreshold: 512
+2017-08-18 12:42:38,582 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - org.jctools-core.MpscChunkedArrayQueue: available
+2017-08-18 12:42:38,748 [main] [io.netty.util.ResourceLeakDetector] [DEBUG] - -Dio.netty.leakDetection.level: simple
+2017-08-18 12:42:38,749 [main] [io.netty.util.ResourceLeakDetector] [DEBUG] - -Dio.netty.leakDetection.maxRecords: 4
+2017-08-18 12:42:38,749 [main] [io.netty.util.ResourceLeakDetectorFactory] [DEBUG] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@359f7cdf
+2017-08-18 12:42:38,912 [main] [io.netty.channel.DefaultChannelId] [DEBUG] - -Dio.netty.processId: 15200 (auto-detected)
+2017-08-18 12:42:38,915 [main] [io.netty.util.NetUtil] [DEBUG] - -Djava.net.preferIPv4Stack: false
+2017-08-18 12:42:38,916 [main] [io.netty.util.NetUtil] [DEBUG] - -Djava.net.preferIPv6Addresses: false
+2017-08-18 12:42:39,124 [main] [io.netty.util.NetUtil] [DEBUG] - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2017-08-18 12:42:39,125 [main] [io.netty.util.NetUtil] [DEBUG] - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+2017-08-18 12:42:39,228 [main] [io.netty.channel.DefaultChannelId] [DEBUG] - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2017-08-18 12:42:39,284 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.numHeapArenas: 8
+2017-08-18 12:42:39,285 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.numDirectArenas: 8
+2017-08-18 12:42:39,286 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.pageSize: 8192
+2017-08-18 12:42:39,286 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.maxOrder: 11
+2017-08-18 12:42:39,286 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.chunkSize: 16777216
+2017-08-18 12:42:39,286 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.tinyCacheSize: 512
+2017-08-18 12:42:39,286 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.smallCacheSize: 256
+2017-08-18 12:42:39,286 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.normalCacheSize: 64
+2017-08-18 12:42:39,287 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2017-08-18 12:42:39,287 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.cacheTrimInterval: 8192
+2017-08-18 12:42:39,287 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.useCacheForAllThreads: true
+2017-08-18 12:42:39,316 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.allocator.type: pooled
+2017-08-18 12:42:39,317 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.threadLocalDirectBufferSize: 65536
+2017-08-18 12:42:39,317 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2017-08-18 12:42:40,454 [redisson-netty-1-6] [org.redisson.connection.pool.MasterConnectionPool] [WARN] - host /127.0.0.1:6379 disconnected due to failedAttempts=3 limit reached
+2017-08-18 12:43:11,495 [main] [io.netty.util.internal.logging.InternalLoggerFactory] [DEBUG] - Using SLF4J as the default logging framework
+2017-08-18 12:43:11,498 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - Platform: Windows
+2017-08-18 12:43:11,502 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - -Dio.netty.noUnsafe: false
+2017-08-18 12:43:11,503 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - Java version: 8
+2017-08-18 12:43:11,506 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - sun.misc.Unsafe.theUnsafe: available
+2017-08-18 12:43:11,508 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - sun.misc.Unsafe.copyMemory: available
+2017-08-18 12:43:11,509 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.Buffer.address: available
+2017-08-18 12:43:11,511 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - direct buffer constructor: available
+2017-08-18 12:43:11,512 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.Bits.unaligned: available, true
+2017-08-18 12:43:11,513 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2017-08-18 12:43:11,513 [main] [io.netty.util.internal.PlatformDependent0] [DEBUG] - java.nio.DirectByteBuffer.<init>(long, int): available
+2017-08-18 12:43:11,513 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - sun.misc.Unsafe: available
+2017-08-18 12:43:11,514 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.tmpdir: C:\Users\mm\AppData\Local\Temp (java.io.tmpdir)
+2017-08-18 12:43:11,514 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2017-08-18 12:43:11,515 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.noPreferDirect: false
+2017-08-18 12:43:11,516 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.maxDirectMemory: 1879048192 bytes
+2017-08-18 12:43:11,516 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2017-08-18 12:43:11,517 [main] [io.netty.util.internal.CleanerJava6] [DEBUG] - java.nio.ByteBuffer.cleaner(): available
+2017-08-18 12:43:12,328 [main] [org.redisson.Version] [INFO] - Redisson 3.4.4
+2017-08-18 12:43:12,340 [main] [io.netty.channel.MultithreadEventLoopGroup] [DEBUG] - -Dio.netty.eventLoopThreads: 8
+2017-08-18 12:43:12,385 [main] [io.netty.channel.nio.NioEventLoop] [DEBUG] - -Dio.netty.noKeySetOptimization: false
+2017-08-18 12:43:12,386 [main] [io.netty.channel.nio.NioEventLoop] [DEBUG] - -Dio.netty.selectorAutoRebuildThreshold: 512
+2017-08-18 12:43:12,390 [main] [io.netty.util.internal.PlatformDependent] [DEBUG] - org.jctools-core.MpscChunkedArrayQueue: available
+2017-08-18 12:43:12,639 [main] [io.netty.util.ResourceLeakDetector] [DEBUG] - -Dio.netty.leakDetection.level: simple
+2017-08-18 12:43:12,639 [main] [io.netty.util.ResourceLeakDetector] [DEBUG] - -Dio.netty.leakDetection.maxRecords: 4
+2017-08-18 12:43:12,639 [main] [io.netty.util.ResourceLeakDetectorFactory] [DEBUG] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@359f7cdf
+2017-08-18 12:43:12,723 [main] [io.netty.channel.DefaultChannelId] [DEBUG] - -Dio.netty.processId: 3268 (auto-detected)
+2017-08-18 12:43:12,726 [main] [io.netty.util.NetUtil] [DEBUG] - -Djava.net.preferIPv4Stack: false
+2017-08-18 12:43:12,726 [main] [io.netty.util.NetUtil] [DEBUG] - -Djava.net.preferIPv6Addresses: false
+2017-08-18 12:43:12,879 [main] [io.netty.util.NetUtil] [DEBUG] - Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2017-08-18 12:43:12,880 [main] [io.netty.util.NetUtil] [DEBUG] - Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+2017-08-18 12:43:13,007 [main] [io.netty.channel.DefaultChannelId] [DEBUG] - -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2017-08-18 12:43:13,045 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.numHeapArenas: 8
+2017-08-18 12:43:13,045 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.numDirectArenas: 8
+2017-08-18 12:43:13,045 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.pageSize: 8192
+2017-08-18 12:43:13,045 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.maxOrder: 11
+2017-08-18 12:43:13,045 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.chunkSize: 16777216
+2017-08-18 12:43:13,045 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.tinyCacheSize: 512
+2017-08-18 12:43:13,046 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.smallCacheSize: 256
+2017-08-18 12:43:13,046 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.normalCacheSize: 64
+2017-08-18 12:43:13,046 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2017-08-18 12:43:13,046 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.cacheTrimInterval: 8192
+2017-08-18 12:43:13,046 [main] [io.netty.buffer.PooledByteBufAllocator] [DEBUG] - -Dio.netty.allocator.useCacheForAllThreads: true
+2017-08-18 12:43:13,056 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.allocator.type: pooled
+2017-08-18 12:43:13,056 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.threadLocalDirectBufferSize: 65536
+2017-08-18 12:43:13,056 [main] [io.netty.buffer.ByteBufUtil] [DEBUG] - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2017-08-18 12:43:13,169 [redisson-netty-1-1] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@1905531901 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4991a223, L:/127.0.0.1:50406 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,170 [redisson-netty-1-5] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@492549556 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x57473576, L:/127.0.0.1:50399 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,170 [redisson-netty-1-2] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new pubsub connection created: RedisPubSubConnection@2032327939 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x6e5d5cff, L:/127.0.0.1:50402 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,171 [redisson-netty-1-2] [org.redisson.connection.pool.MasterPubSubConnectionPool] [INFO] - 1 connections initialized for /127.0.0.1:6379
+2017-08-18 12:43:13,172 [redisson-netty-1-7] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@104817008 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xd6bd0b1a, L:/127.0.0.1:50403 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,174 [redisson-netty-1-8] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@167466443 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x3d018183, L:/127.0.0.1:50405 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,176 [redisson-netty-1-4] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@1964150797 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x084f0ba7, L:/127.0.0.1:50400 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,178 [redisson-netty-1-5] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@1482242171 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x61ad9062, L:/127.0.0.1:50404 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,178 [redisson-netty-1-6] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@1921300462 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xde8d4a61, L:/127.0.0.1:50401 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,179 [redisson-netty-1-3] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@1370163554 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4576ba8a, L:/127.0.0.1:50407 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,180 [redisson-netty-1-6] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@1038234199 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xdba128e9, L:/127.0.0.1:50408 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,181 [redisson-netty-1-7] [org.redisson.connection.ClientConnectionsEntry] [DEBUG] - new connection created: RedisConnection@1128132563 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xe722b827, L:/127.0.0.1:50409 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,182 [redisson-netty-1-7] [org.redisson.connection.pool.MasterConnectionPool] [INFO] - 10 connections initialized for /127.0.0.1:6379
+2017-08-18 12:43:13,209 [main] [org.redisson.connection.SingleConnectionManager] [DEBUG] - DNS monitoring enabled; Current master set to /127.0.0.1
+2017-08-18 12:43:13,239 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (EVAL) and params [local v = redis.call('hget', KEYS[1], ARGV[1]); redis.call('hset', KEYS[1], ARGV[1], ARGV[2]); return v, 1, FirstMap, [B@13b13b5d, [B@2892dae4] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1905531901 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4991a223, L:/127.0.0.1:50406 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,242 [main] [io.netty.util.Recycler] [DEBUG] - -Dio.netty.recycler.maxCapacityPerThread: 32768
+2017-08-18 12:43:13,242 [main] [io.netty.util.Recycler] [DEBUG] - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+2017-08-18 12:43:13,243 [main] [io.netty.util.Recycler] [DEBUG] - -Dio.netty.recycler.linkCapacity: 16
+2017-08-18 12:43:13,243 [main] [io.netty.util.Recycler] [DEBUG] - -Dio.netty.recycler.ratio: 8
+2017-08-18 12:43:13,257 [redisson-netty-1-2] [io.netty.buffer.AbstractByteBuf] [DEBUG] - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2017-08-18 12:43:13,257 [redisson-netty-1-2] [io.netty.util.ResourceLeakDetectorFactory] [DEBUG] - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@2c7a9bd
+2017-08-18 12:43:13,269 [redisson-netty-1-2] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (EVAL) and params [local v = redis.call('hget', KEYS[1], ARGV[1]); redis.call('hset', KEYS[1], ARGV[1], ARGV[2]); return v, 1, FirstMap, [B@13b13b5d, [B@2892dae4] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1905531901 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4991a223, L:/127.0.0.1:50406 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,270 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (EVAL) and params [local v = redis.call('hget', KEYS[1], ARGV[1]); redis.call('hset', KEYS[1], ARGV[1], ARGV[2]); return v, 1, FirstMap, [B@7671cb68, [B@49dc7102] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@492549556 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x57473576, L:/127.0.0.1:50399 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,271 [redisson-netty-1-6] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (EVAL) and params [local v = redis.call('hget', KEYS[1], ARGV[1]); redis.call('hset', KEYS[1], ARGV[1], ARGV[2]); return v, 1, FirstMap, [B@7671cb68, [B@49dc7102] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@492549556 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x57473576, L:/127.0.0.1:50399 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,272 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (EVAL) and params [local v = redis.call('hget', KEYS[1], ARGV[1]); redis.call('hset', KEYS[1], ARGV[1], ARGV[2]); return v, 1, FirstMap, [B@6b8ca3c8, [B@68c72235] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@104817008 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xd6bd0b1a, L:/127.0.0.1:50403 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,273 [redisson-netty-1-1] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (EVAL) and params [local v = redis.call('hget', KEYS[1], ARGV[1]); redis.call('hset', KEYS[1], ARGV[1], ARGV[2]); return v, 1, FirstMap, [B@6b8ca3c8, [B@68c72235] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@104817008 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xd6bd0b1a, L:/127.0.0.1:50403 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,276 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (HSCAN) and params [FirstMap, 0] from slot NodeSource [slot=0, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@167466443 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x3d018183, L:/127.0.0.1:50405 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,281 [redisson-netty-1-2] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (HSCAN) and params [FirstMap, 0] from slot NodeSource [slot=0, addr=null, redirect=null] using connection RedisConnection@167466443 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x3d018183, L:/127.0.0.1:50405 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,283 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (HSCAN) and params [FirstMap, 0] from slot NodeSource [slot=0, addr=/127.0.0.1:6379, redirect=null] using node /127.0.0.1:6379... RedisConnection@1964150797 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x084f0ba7, L:/127.0.0.1:50400 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,284 [redisson-netty-1-8] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (HSCAN) and params [FirstMap, 0] from slot NodeSource [slot=0, addr=/127.0.0.1:6379, redirect=null] using connection RedisConnection@1964150797 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x084f0ba7, L:/127.0.0.1:50400 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,287 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (SADD) and params [MySet, wuguowei] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1482242171 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x61ad9062, L:/127.0.0.1:50404 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,288 [redisson-netty-1-7] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (SADD) and params [MySet, wuguowei] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1482242171 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x61ad9062, L:/127.0.0.1:50404 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,289 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (SADD) and params [MySet, lisi] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1921300462 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xde8d4a61, L:/127.0.0.1:50401 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,290 [redisson-netty-1-4] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (SADD) and params [MySet, lisi] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1921300462 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xde8d4a61, L:/127.0.0.1:50401 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,291 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (SCARD) and params [MySet] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1370163554 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4576ba8a, L:/127.0.0.1:50407 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,292 [redisson-netty-1-5] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (SCARD) and params [MySet] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1370163554 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4576ba8a, L:/127.0.0.1:50407 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,294 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (RPUSH) and params [FirstQueue, wuguowei] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1038234199 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xdba128e9, L:/127.0.0.1:50408 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,296 [redisson-netty-1-3] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (RPUSH) and params [FirstQueue, wuguowei] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1038234199 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xdba128e9, L:/127.0.0.1:50408 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,296 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (RPUSH) and params [FirstQueue, lili] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1128132563 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xe722b827, L:/127.0.0.1:50409 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,297 [redisson-netty-1-3] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (RPUSH) and params [FirstQueue, lili] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1128132563 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xe722b827, L:/127.0.0.1:50409 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,297 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (RPUSH) and params [FirstQueue, zhangsan] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1905531901 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4991a223, L:/127.0.0.1:50406 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,298 [redisson-netty-1-2] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (RPUSH) and params [FirstQueue, zhangsan] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1905531901 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x4991a223, L:/127.0.0.1:50406 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,298 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (LINDEX) and params [FirstQueue, 0] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@492549556 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x57473576, L:/127.0.0.1:50399 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,299 [redisson-netty-1-6] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (LINDEX) and params [FirstQueue, 0] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@492549556 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x57473576, L:/127.0.0.1:50399 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,300 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (LPOP) and params [FirstQueue] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@104817008 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xd6bd0b1a, L:/127.0.0.1:50403 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,301 [redisson-netty-1-1] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (LPOP) and params [FirstQueue] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@104817008 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0xd6bd0b1a, L:/127.0.0.1:50403 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,302 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (LINDEX) and params [FirstQueue, 0] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@167466443 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x3d018183, L:/127.0.0.1:50405 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,303 [redisson-netty-1-2] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (LINDEX) and params [FirstQueue, 0] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@167466443 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x3d018183, L:/127.0.0.1:50405 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,304 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (LINDEX) and params [FirstQueue, 1] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1964150797 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x084f0ba7, L:/127.0.0.1:50400 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,305 [redisson-netty-1-8] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (LINDEX) and params [FirstQueue, 1] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1964150797 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x084f0ba7, L:/127.0.0.1:50400 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,305 [main] [org.redisson.command.CommandAsyncService] [DEBUG] - acquired connection for command (LINDEX) and params [FirstQueue, 2] from slot NodeSource [slot=null, addr=null, redirect=null] using node /127.0.0.1:6379... RedisConnection@1482242171 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x61ad9062, L:/127.0.0.1:50404 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:13,306 [redisson-netty-1-7] [org.redisson.command.CommandAsyncService] [DEBUG] - connection released for command (LINDEX) and params [FirstQueue, 2] from slot NodeSource [slot=null, addr=null, redirect=null] using connection RedisConnection@1482242171 [redisClient=[addr=/127.0.0.1:6379], channel=[id: 0x61ad9062, L:/127.0.0.1:50404 - R:/127.0.0.1:6379]]
+2017-08-18 12:43:15,420 [redisson-netty-1-1] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-1
+2017-08-18 12:43:15,421 [redisson-netty-1-2] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-2
+2017-08-18 12:43:15,422 [redisson-netty-1-4] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-4
+2017-08-18 12:43:15,423 [redisson-netty-1-8] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-8
+2017-08-18 12:43:15,423 [redisson-netty-1-6] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-6
+2017-08-18 12:43:15,423 [redisson-netty-1-7] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-7
+2017-08-18 12:43:15,522 [redisson-netty-1-3] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-3
+2017-08-18 12:43:15,522 [redisson-netty-1-5] [io.netty.buffer.PoolThreadCache] [DEBUG] - Freed 2 thread-local buffer(s) from thread: redisson-netty-1-5

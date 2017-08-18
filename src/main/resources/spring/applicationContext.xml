@@ -19,7 +19,7 @@
         </bean>
 
         <!---配置切面行为-->
-        <aop:config>
+        <aop:config proxy-target-class="true">
                 <aop:pointcut id="serviceOption" expression="execution(* com.lug.service..*.*(..))"/>
                 <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOption"/>
         </aop:config>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        <context:property-placeholder location="classpath:jedis.properties"/>
+
+        <bean id="jedisPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">
+                <!--对拿到的connection进行validateObject校验-->
+                <property name="testOnReturn"  value="${redis.pool.testOnReturn}"/>
+                <!--定时对线程池中空闲的链接进行validateObject校验-->
+                <property name="testWhileIdle" value="${redis.pool.testWhileIdle}"/>
+                <!--在进行returnObject对返回的connection进行validateObject校验-->
+                <property name="testOnBorrow"  value="${redis.pool.testOnBorrow}"/>
+                <property name="minIdle"        value="${redis.pool.minIdle.REL}"/>
+                <property name="maxIdle"        value="${redis.pool.maxIdle.REL}"/>
+                <property name="maxTotal"       value="${redis.pool.maxTotal.REL}"/>
+        </bean>
+
+        <bean id="redisSessionDAO" class="com.lug.shiro.redis.RedisSessionDAO">
+                <property name="redisManager" ref="jedisPoolManager" />
+                <property name="expire" value="10000" />
+        </bean>
+
+        <bean id="basePoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+                <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+                <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
+                <property name="testWhileIdle" value="true"/>
+                <property name="maxTotal" value="${redis.pool.maxTotal.REL}"/>
+                <property name="minIdle" value="${redis.pool.minIdle.REL}"/>
+                <property name="maxIdle" value="${redis.pool.maxIdle.REL}"/>
+        </bean>
+        <bean id="redisCacheManager" class="com.lug.shiro.redis.RedisCacheManager">
+                <property name="redisManager" ref="jedisPoolManager"/>
+        </bean>
+
+        <bean id="jedisPoolManager" class="com.lug.shiro.redis.JedisPoolManager">
+                <property name="jedisPool" ref="redisPool"/>
+        </bean>
+
+        <bean id="redisPool" class="redis.clients.jedis.JedisPool">
+                <constructor-arg index="0" ref="basePoolConfig"/>
+                <constructor-arg index="1" value="${redis.host.REL}"/>
+                <constructor-arg index="2" value="${redis.port.REL}"/>
+                <constructor-arg index="3" value="${redis.timeout}"/>
+                <constructor-arg index="4" value="${redis.password.REL}"/>
+        </bean>
+
+</beans>

@@ -1,0 +1,164 @@
+user  nginx   nginx;
+worker_processes  1;
+error_log  logs/error.log  info;
+pid        logs/nginx.pid;
+worker_rlimit_nofile  65535;
+events {
+    use epoll;
+    worker_connections  65536;
+}
+user 指定NginxWorker进程运行用户以及用户组，默认由nobody账号运行
+worker_processes 指定Nginx要开启的进程数。每个进程平均耗费10MB~12MB内存。根据经验，一般指定一个进程足够了，如果是多核CPU，建议指定和CPU的数量一样多的进程数即可。
+error_log 用来定义全局错误日志文件。日志输出级别有debug、info、notice、warn、error、crit，debug输出日志最详细，crit最少
+pid 指定进程id的存储文件位置。
+work_rlimit_nofile 用于绑定worker进程和cpu
+events 用来设定Nginx的工作模式及连接数上限
+use 是个事件模块指令，用来指定Nginx的工作模式。支持的工作模式有：select、poll、kqueue、epoll、rtsig和/dev/poll。其中select和poll都是标准的工作模式，kqueue和epoll中高效的工作模式，不同的是epoll用在Linux平台上，而kqueue用在BSD系统中。对于Linux系统，epoll工作模式是首选。
+worker_connections 也是个事件模块指令，用于定义Nginx每个进程的最大连接数，默认是1024。
+
+http {
+    include           mime.types;
+    default_type  application/octet-stream;
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+    client_max_body_size        20m;
+    client_header_buffer_size   32k;
+    large_client_header_buffers  4  32k;
+    sendfile       on;
+    tcp_nopush     on;
+    tcp_nodelay    on;
+    keepalive_timeout        60;
+    client_header_timeout    10;
+    client_body_timeout      10;
+    send_timeout             10;
+
+    include 是个主模块指令，实现对配置文件包含文件的设定，可以减少主配置文件的复杂度。类似于Apache的include
+    default_type 属于http核心模块指令，这里设定默认类型是二进程流，也就是当文件类型未定义时使用这种方式，例如在没有配置PH环境时，Nginx是不予解析的，此时，用浏览器访问PHP文件就会出现下载窗口。
+    log_format 是httplog模块指令，用于指定nginx日志的输出格式。main是此日志输出格式的名称
+    client_max_body_size 设置允许客户端请求的最大单个文件字节数
+    client_header_buffer_size 指定来自客户端请求头的headerbuffer大小
+    large_client_header_buffers 指定客户端请求中较大的消息头的缓存最大数量和大小，4为个数，32k为大小，最大缓存为4个128KB。
+    sendfile 开启高效文件传输模式。将tcp_nopush和tcp_nodely两个指令设置为on，用于防止网络阻塞。
+    keepalive_timeout 设置客户端连接保持活动的超时时间
+    client_header_timeout 设置客户端请求头读取超时时间
+    client_body_timeout 设置客户端请求主体读取超时时间
+    send_timeout 指定响应客户端的超时时间。
+
+     gzip  on;
+        gzip_min_length     1k;
+        gzip_buffers            4  16k;
+        gzip_http_version    1.1;
+        gzip_comp_level      2;
+        gzip_types              text/plain application/x-javascript text/css application/xml;
+        gzip_vary               on;
+
+      gzip on 开启gzip压缩，实时压缩输出数据流。
+      gzip_min_length 设置允许压缩的页面最小字节数，页面字节数从header头的Content-Length中获取。默认值是0，不管页面多大都进行压缩。建议设置成大于1k的字节数，小于1K可能会越压越大。
+      gzip_buffers 表示申请4个单位为16k的内存作为压缩结果流缓存，默认值是申请与原始数据大小相同的内存空间来存储gzip压缩结果。
+      gzip_http_version 设置识别HTTP协议版本，默认是1.1
+      gzip_comp_level 指定gzip压缩比，1压缩比最小，处理速度最快；9压缩比最大，传输速度快，但处理最慢，也比较消耗CPU资源。
+      gzip_types 指定压缩的类型，无论是否指定，“text/html”类型总是会被压缩的。
+      gzip_vary 可以让前端的缓存服务器缓存经过gzip压缩的页面
+
+      upstream myServers {
+              server 192.168.212.99:8080 max_fails=3 fail_timeout=10s;
+              server 192.168.212.128:80 max_fails=3 fail_timeout=10s;
+              }
+
+      upstream 是Nginx的HTTP Upstream模块，这个模块通过一个简单的调度算法来实现客户端IP到后端服务器的负载均衡。Nginx的负载均衡模块目前支持4种调试算法，轮询、ip_hash、fair、url_hash，后两项属于第三方调试算法，在另一篇文章中有做详细的介绍，这就不废话了，上面使用的是轮询
+
+      include       server/default.conf;
+      server {
+      listen          80;
+      server_name     www.wnt.com;
+      index     <span style="white-space:pre">    </span>index.html index.htm;
+      root            html;
+      charset         utf-8;
+      access_log    logs/www.wnt.com-access.log main;
+
+       listen 指定虚拟主机的服务器端口
+       server_name 指定IP地址或者域名，多个域名之间用空格分开。
+       index 设定访问的默认首页文档
+       root 指定虚拟主机的网页根目录，可以相对路径，也可以是绝对路径
+       charset 设置网页的默认编码格式
+       access_log 指定些虚拟主机的访问日志存放路径。最后的main是访问日志的输出格式。
+
+     location / {
+             proxy_pass      http://myServers;
+             proxy_next_upstream http_500 http_502 http_503 error timeout invalid_header;
+             include         server/proxy.conf;
+             }
+     proxy_next_upstream 用来定义故障转移策略，当后端服务节点返回500、502、503和执行超时等错误时，自动将请求转发到upstream负载均衡群中的另一台服务器，实现故障转移。最后通过include指令包含进来一个proxy.conf文件，详细配置在下面写出
+
+     location ~.*\.(gif|jpg|jpeg|png|bmp|swf)$ {
+             expires 1d;
+             }
+         location ~ ^/(upload|html)/ {
+             expires 1d;
+             }
+
+     #StubStatus模块配置 ，stub_status 开启模块，access_log 指定StubStatus模块的访问日志文件
+     location /NginxStatus {
+             stub_status     on;
+             access_log      logs/NginxStatus.log;
+             }
+
+     error_page  404     /404.html;
+     error_page  500 502 503 504 /50x.html;
+     location = /50x.html {
+         }
+
+
+     proxy_redirect off;
+     proxy_set_header Host $host;
+     proxy_set_header X-Real-IP $remote_addr;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+     client_body_buffer_size 128k;
+     proxy_connect_timeout 90;
+     proxy_send_timeout 90;
+     proxy_read_timeout 90;
+     proxy_buffer_size  4k;
+     proxy_buffers  4  32k;
+     proxy_busy_buffers_size 64k;
+     proxy_temp_file_write_size 64k;
+
+     proxy_redirect 指定修改被代理服务器返回的响应头中的“Location"和"Refresh
+     proxy_set_header 设置由后端的服务器获取用户的主机名或真实IP地址，以及代理者的真实IP地址
+     client_body_buffer_size 用于指定客户端请求主体缓冲区大小，可以理解为先保存到本地再传给用户。
+     proxy_connect_timeout 表示与后端服务器连接的超时时间，即发起握手等候响应的超时时间
+     proxy_send_timeout 表示后端服务器的数据回传时间，即在规定时间之内传完所有的数据，否则，Nginx将断开这个连接。
+     proxy_read_timeout 设置Nginx从代理的后端服务器获取信息的时间，表示连接建立成功后，Nginx等待后端服务器的响应时间，其实是Nginx已经进入后端的排除之中等候处理的时间。
+     proxy_buffer_size 设置缓冲区大小，默认该缓冲区大小等于指令proxy_buffers设置的大小
+     proxy_buffers 设置缓冲区的数量和大小。Nginx从代理的后端服务器获取的响应信息，会放置到缓冲区。
+     proxy_busy_buffers_size 设置系统很忙时可以使用的proxy_buffers大小，官方推荐的大小为proxy_buffers X 2
+     proxy_temp_file_write_size 指定proxy缓存临时文件的大小。
+
+
+     net.ipv4.tcp_max_tw_buckets = 6000
+     net.ipv4.ip_local_port_range = 1024 65000
+     net.ipv4.tcp_tw_recycle = 1
+     net.ipv4.tcp_tw_reuse = 1
+     net.ipv4.tcp_syncookies = 1
+     net.core.somaxconn = 262144
+     net.core.netdev_max_backlog = 262144
+     net.ipv4.tcp_max_orphans = 262144
+     net.ipv4.tcp_max_syn_backlog = 262144
+     net.ipv4.tcp_synack_retries = 1
+     net.ipv4.tcp_syn_retries = 1
+     net.ipv4.tcp_fin_timeout = 1
+     net.ipv4.tcp_keepalive_time = 30
+
+     net.ipv4.tcp_max_tw_buckets 选项用来设定timewait的数量，默认是180000，这里设为6000。
+     net.ipv4.ip_local_port_range 选项用来设定允许系统打开的端口范围。
+     net.ipv4.tcp_tw_recycle 选项用于设置启用timewait快速回收
+     net.ipv4.tcp_tw_reuse 选项用于设置开启重用，允许将TIME-WAIT sockets重新用于新的TCP连接。
+     net.ipv4.tcp_syncookies 选项用于设置开启SYN Cookies，当出现SYN等待队列溢出时，启用cookies进行处理。
+     net.core.somaxconn 选项的默认值是128，这个参数用于调节系统同时发起的tcp连接数，在高并发的请求中，默认的值可能会导致链接超时或者重传，因此，需要结合并发请求数来调节此值。
+     net.core.netdev_max_backlog 选项表示当每个网络接口接收数据包的速率比内核处理这些包的速度快时，允许发送到队列的数据包的最大数目
+     net.ipv4.tcp_max_orphans 选项用于设定系统中最多有多少个TCP套接字不被关联到任何一个用户文件句柄上。如果超过这个数字，孤立连接将立即被复位并打印出警告信息。这个限制只是为了防止简单的Dos攻击。不过过分依靠这个限制甚至人为减小这个值，更多的情况下应该增加这个值。
+     net.ipv4.tcp_max_syn_backlog 选项用于记录那些尚未收到客户端确认信息的连接请求的最大值。对于有128MB内存的系统而方，此参数的默认值是1024，对小内存的系统则是128。
+     net.ipv4.tcp_synack_retries 参数的值决定了内核放弃连接之前发送SYN+ACK包的数量。
+     net.ipv4.tcp_syn_retries 选项表示在内核放弃建立连接之前发送的SYN包的数量
+     net.ipv4.tcp_fin_timeout 选项决定了套接字保持在FIN-WAIT-2状态的时间。默认值是60秒。正确设置这个值非常重要，有时即使一个负载很小的Web服务器，也会出现大量的死套接定而产生内存溢出的风险。
+     net.ipv4.tcp_keepalive_time 选项表示当keepalive启用的时候，TCP发送keepalive消息的频度。默认值是2（单位是小时）
