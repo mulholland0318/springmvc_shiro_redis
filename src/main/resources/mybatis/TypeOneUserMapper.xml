@@ -5,6 +5,8 @@
         insert into user(id,username,password,phone)values(#{id},#{username},#{password},#{phone})
     </insert>
 	
-
+    <select id="findAll" resultType="User">
+        select *  from user
+    </select>
 	
 </mapper>

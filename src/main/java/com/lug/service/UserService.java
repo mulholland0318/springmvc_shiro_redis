@@ -7,6 +7,7 @@ import com.lug.mybatis.model.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("userService")
 public class UserService {
@@ -37,5 +38,9 @@ public class UserService {
 
     public com.lug.model.User findUserByName(String username) {
         return new com.lug.model.User();
+    }
+
+    public List<User> findAllByTypeOne(){
+        return typeOneDao.findAllUsers();
     }
 }
