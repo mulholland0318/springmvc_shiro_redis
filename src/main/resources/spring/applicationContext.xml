@@ -13,7 +13,7 @@
       http://www.springframework.org/schema/context/spring-context.xsd">
 
         <!-- 扫描包Service实现类 -->
-        <context:component-scan base-package="com.lug.service,com.lug.mybatis"/>
+        <context:component-scan base-package="com.lug.service,com.lug.mybatis,com.lug.dao"/>
 
         <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
                 <property name="locations">

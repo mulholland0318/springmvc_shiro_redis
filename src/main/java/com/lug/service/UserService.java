@@ -1,4 +1,6 @@
 package com.lug.service;
+import com.lug.dao.UserDaoTypeOne;
+import com.lug.dao.UserDaoTypeTwo;
 import com.lug.mybatis.mapper.UserDao;
 import com.lug.mybatis.mapper.UserMapper;
 import com.lug.mybatis.model.User;
@@ -14,6 +16,16 @@ public class UserService {
 
     @Resource
     private UserDao userDao;
+
+    @Resource
+    private UserDaoTypeOne typeOneDao;
+
+    @Resource
+    private UserDaoTypeTwo typeTwoDao;
+
+    public void saveOne(User user){typeOneDao.save(user);}
+
+    public void saveTwo(User user){typeTwoDao.save(user);}
 
     public void save(User user){
         dao.save(user);

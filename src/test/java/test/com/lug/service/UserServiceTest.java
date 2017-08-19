@@ -18,6 +18,28 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests{
     private UserService service;
 
 
+    @Test
+    public void TypeTwoSaveTest(){
+        User user = new User();
+        user.setId(UUID.randomUUID().toString().replace("-",""));
+        user.setUsername("zhangsan");
+        user.setPassword("password");
+        user.setPhone("13516269745");
+        service.saveTwo(user);
+    }
+
+    @Test
+    public void typeOneSaveTest(){
+        User user = new User();
+        user.setId(UUID.randomUUID().toString().replace("-",""));
+        user.setUsername("zhangsan");
+        user.setPassword("password");
+        user.setPhone("13516269745");
+        service.saveOne(user);
+    }
+
+
+
 
     @Test
     public void userSaveTest(){

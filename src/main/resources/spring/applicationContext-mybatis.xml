@@ -4,6 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
       ">
         <import resource="applicationContext.xml"/>
+
+        <!--spring与mybatis配置的第一种方式-->
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
                 <property name="dataSource" ref="dataSource"/>
                 <!--配置mybatis全局配置文件:mybatisConfig.xml-->
@@ -12,8 +14,32 @@
                 <property name="typeAliasesPackage" value="com.lug.mybatis.model"/>
                 <!--扫描sql配置文件:mapper需要的xml文件-->
                 <property name="mapperLocations" value="classpath:mybatis/*Mapper.xml"/>
+
+               <!--配置该属性后 取代了在mybatis-config.xml中配置分页插件-->
+                <property name="plugins">
+                        <array>
+                                <bean class="com.github.pagehelper.PageInterceptor">
+                                        <property name="properties">
+                                                <value>
+                                                        helperDialect=mysql
+                                                        <!--置 reasonable 为 true，这时如果 pageNum<=0 会查询第一页，如果 pageNum>总页数 会查询最后一页。-->
+                                                        reasonable=true
+                                                        supportMethodsArguments=true
+                                                        params=count=countSql
+                                                        autoRuntimeDialect=true
+                                                        <!--你觉得 RowBounds 中的两个参数 offset,limit 不如 pageNum,pageSize 容易理解， 你可以使用
+                                                        offsetAsPageNum 参数，将该参数设置为 true 后，offset会当成 pageNum 使用，limit 和 pageSize 含义相同。-->
+                                                        offsetAsPageNum=true
+                                                </value>
+                                        </property>
+                                </bean>
+
+                        </array>
+
+                </property>
         </bean>
 
+        <!--第二种方式-->
         <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
                 <constructor-arg index="0" ref="sqlSessionFactory"/>
                 <!--可以进行批量处理-->
@@ -22,9 +48,11 @@
         <!-- 4:配置扫描Dao接口包,动态实现DAO接口,注入到spring容器-->
         <!--没 有 必 要 去 指 定 SqlSessionFactory 或 SqlSessionTemplate , 因 为 MapperScannerConfigurer 将会创建 MapperFactoryBean,之后自动装配
         。但是,如果你使 用了一个 以上的 DataSource ,那 么自动 装配可 能会失效 -->
+        <!--第三种方式，推荐该方式，自动扫描管理mapper接口，不需要编写太多代码-->
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
                 <!--注入SqlSessionFactory-->
                <!-- <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>-->
+                <!--注意该属性不使用ref注入，使用value注入-->
                 <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
                 <property name="basePackage" value="com.lug.mybatis.mapper"/>
                 <property name="markerInterface" value="com.lug.mybatis.mapper.SqlMapper"/>
