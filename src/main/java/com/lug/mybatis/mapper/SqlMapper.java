@@ -3,7 +3,7 @@ package com.lug.mybatis.mapper;
 import java.util.List;
 
 public interface SqlMapper {
-    public void save();
+   /* public void save();
 
     public void delete(String id);
 
@@ -11,5 +11,5 @@ public interface SqlMapper {
 
     public List<Object> findAll();
 
-    public Object findById();
+    public Object findById();*/
 }

@@ -24,7 +24,8 @@
         。但是,如果你使 用了一个 以上的 DataSource ,那 么自动 装配可 能会失效 -->
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
                 <!--注入SqlSessionFactory-->
-                <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>
+               <!-- <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>-->
+                <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
                 <property name="basePackage" value="com.lug.mybatis.mapper"/>
                 <property name="markerInterface" value="com.lug.mybatis.mapper.SqlMapper"/>
         </bean>
