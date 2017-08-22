@@ -4,7 +4,34 @@
 	<insert id="save" parameterType="User" >
         insert into user(id,username,password,phone)values(#{id},#{username},#{password},#{phone})
     </insert>
-	
 
-	
+    <delete id="delete" parameterType="String" >
+        delete from user where id = #{id}
+    </delete>
+
+    <delete id="deleteByPhone" parameterType="String">
+        delete from user where phone = #{phone}
+    </delete>
+
+    <update id="update" parameterType="User" >
+        update user
+        set  username = #{username},
+              password = #{password},
+              phone    = #{phone}
+        where id      = #{id}
+    </update>
+
+    <select id ="findPageByParam" parameterType="User" resultType="User">
+        select * from user
+    </select>
+
+
+    <select id="findAll" resultType="User">
+        select * from user
+    </select>
+
+	<select id = "findAllByPage" resultType="User" parameterType="Page">
+        select * from user
+    </select>
+
 </mapper>

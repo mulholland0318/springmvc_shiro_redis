@@ -1,19 +1,27 @@
 package com.lug.service;
+import com.github.pagehelper.ISelect;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lug.dao.UserDaoTypeOne;
 import com.lug.dao.UserDaoTypeTwo;
+import com.lug.mybatis.mapper.SqlMapper;
 import com.lug.mybatis.mapper.UserDao;
 import com.lug.mybatis.mapper.UserMapper;
 import com.lug.mybatis.model.User;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service("userService")
-public class UserService {
+public class UserService implements BaseService<User>{
 
     @Resource(name="userMapper")
     private UserMapper dao;
+
 
     @Resource
     private UserDao userDao;
@@ -28,9 +36,6 @@ public class UserService {
 
     public void saveTwo(User user){typeTwoDao.save(user);}
 
-    public void save(User user){
-        dao.save(user);
-    }
 
     public void saveDao(User user){
         userDao.save(user);
@@ -42,5 +47,96 @@ public class UserService {
 
     public List<User> findAllByTypeOne(){
         return typeOneDao.findAllUsers();
+    }
+
+    public List<User> findAllTypeThree(){
+        PageHelper.startPage(0,10);
+        return dao.findAll();
+    }
+
+    public List<User> findAllTypeThreeOne(){
+        PageHelper.offsetPage(0,12);
+        return dao.findAll();
+    }
+
+
+    public List<User> findAllByTypeThreeWithParam(int pageNum,int pageSize){
+        return dao.findAll(pageNum,pageSize);
+    }
+
+    public List<User> findAllByPage(com.lug.mybatis.model.Page<User> page){
+        return dao.findAllByPage(page);
+    }
+
+    public com.github.pagehelper.Page<User> findAllByInterface(){
+        return PageHelper.startPage(1,7).doSelectPage(new ISelect() {
+            public void doSelect() {
+                dao.findAll();
+            }
+        });
+
+    }
+
+
+    public com.github.pagehelper.Page<User> findAllBylambda(){
+        com.github.pagehelper.Page<User> page = PageHelper.startPage(1,9).doSelectPage(()-> dao.findAll());
+        return page;
+    }
+
+    public PageInfo<User> findAllByPageInfo(){
+        return PageHelper.startPage(1,11).doSelectPageInfo(()->dao.findAll());
+    }
+
+
+    public long findCount(){
+        return PageHelper.count(()->dao.findAll());
+    }
+
+
+    public List<User> findAllByDefault(RowBounds rowBounds){
+        if(null == rowBounds){
+            rowBounds = new RowBounds(1,14);
+        }
+        return dao.findAll(rowBounds);
+    }
+
+    public long deleteById(String id){
+        return dao.delete(id);
+    }
+
+    @Override
+    public long save(User user) {
+        return dao.save(user);
+    }
+
+    public long update(User user){
+        return dao.update(user);
+    }
+
+    @Override
+    public long delete(String id) {
+        return dao.delete(id);
+    }
+
+    @Override
+    public User findById(String id) {
+        return dao.findById(id);
+    }
+
+    @Override
+    public Page<User> findPage(Object obj) {
+        return PageHelper.startPage(1,0).doSelectPage(()-> dao.findPageByParam(obj));
+    }
+
+
+
+
+    @Override
+    public PageInfo<User> findPageInfo(Object obj) {
+        return dao.findByParam(obj);
+    }
+
+    public long deleteByPhone(String phone){
+        return dao.deleteByPhone(phone);
     }
 }

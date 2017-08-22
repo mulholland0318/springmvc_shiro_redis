@@ -1,21 +1,19 @@
 package com.lug.service;
 
-import javax.annotation.Resource;
-import javax.sql.DataSource;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
+import com.lug.mybatis.mapper.SqlMapper;
 
-public class BaseService {
+public interface BaseService<T> {
+    public long save(T t);
 
-    @Resource(name="dataSource")
-    private DataSource dao;
+    public long update(T t);
 
-    public void save(){
-    }
+    public long delete(String id);
 
-    public void update(){
+    public T findById(String id);
 
-    }
+    public Page<T> findPage(Object obj);
 
-    public void delete(String id){
-
-    }
+    public PageInfo<T> findPageInfo(Object obj);
 }

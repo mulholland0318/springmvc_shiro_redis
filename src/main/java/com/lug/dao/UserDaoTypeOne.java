@@ -20,7 +20,7 @@ public class UserDaoTypeOne extends SqlSessionDaoSupport {
     }
 
     public List<User> findAllUsers(){
-        RowBounds rb = new RowBounds();
+        RowBounds rb = new RowBounds(0,10);
         return getSqlSession().selectList("UserMapper.findAll",null,rb);
     }
 

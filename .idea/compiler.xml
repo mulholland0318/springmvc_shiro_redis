@@ -9,8 +9,8 @@
         <module name="springMVC_shiro_reids" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="springMVC_shiro_reids" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="springMVC_shiro_reids" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

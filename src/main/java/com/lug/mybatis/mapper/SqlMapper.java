@@ -1,15 +1,24 @@
 package com.lug.mybatis.mapper;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
+import org.mybatis.spring.annotation.MapperScan;
+
 import java.util.List;
 
-public interface SqlMapper {
-   /* public void save();
+@MapperScan("baseMapper")
+public interface SqlMapper<T> {
+    public long save(T t);
 
-    public void delete(String id);
+    public long delete(String id);
 
-    public void update(Object obj);
+    public long update(T t);
 
-    public List<Object> findAll();
+    public List<T> findAll();
 
-    public Object findById();*/
+    public T findById(String id);
+
+    public PageInfo<T> findByParam(Object obj);
+
+    public Page<T> findPageByParam(Object obj);
 }
