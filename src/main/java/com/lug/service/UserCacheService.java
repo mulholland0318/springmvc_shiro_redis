@@ -1,5 +1,7 @@
 package com.lug.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.lug.mybatis.mapper.UserMapper;
 import com.lug.mybatis.model.User;
 import org.springframework.cache.annotation.CacheEvict;
@@ -10,30 +12,39 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Service("userCacheService")
-public class UserCacheService {
+public class UserCacheService implements BaseService<User>{
 
-    @Resource
+    @Resource(name = "userMapper")
     private UserMapper dao;
 
 
-    @Cacheable()
-    public long save(User user){
-        return dao.save(user);
+    @Override
+    public long save(User user) {
+        return 0;
     }
 
-    @CacheEvict()
-    public long delete(String id){
-        return dao.delete(id);
+    @Override
+    public long update(User user) {
+        return 0;
     }
 
-    @CachePut()
-    public long update(User user){
-        return dao.update(user);
+    @Override
+    public long delete(String id) {
+        return 0;
     }
 
-    @Cacheable()
-    public User findById(String id){
-        return dao.findById(id);
+    @Override
+    public User findById(String id) {
+        return null;
     }
 
+    @Override
+    public Page<User> findPage(Object obj) {
+        return null;
+    }
+
+    @Override
+    public PageInfo<User> findPageInfo(Object obj) {
+        return null;
+    }
 }

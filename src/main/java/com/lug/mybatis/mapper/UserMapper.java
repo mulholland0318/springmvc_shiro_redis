@@ -15,7 +15,6 @@ import java.util.List;
 @MapperScan("userMapper")
 public interface UserMapper extends SqlMapper<User>{
 
-
     public List<User> findAll();
 
     public List<User> findAll(@Param("pageNum") int pageNum,@Param("pageSize")int pageSize);

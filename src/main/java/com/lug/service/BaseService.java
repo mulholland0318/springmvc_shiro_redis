@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.lug.mybatis.mapper.SqlMapper;
 
 public interface BaseService<T> {
+
     public long save(T t);
 
     public long update(T t);

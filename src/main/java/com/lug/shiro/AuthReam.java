@@ -10,16 +10,17 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class AuthReam extends AuthorizingRealm {
 
+
+public class AuthReam extends AuthorizingRealm {
+    @Resource
     private UserService userService;
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
+
 
     //授权
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -50,8 +51,9 @@ public class AuthReam extends AuthorizingRealm {
         System.out.println("认证");
         UsernamePasswordToken upToken = (UsernamePasswordToken)token;
 
-        User user = userService.findUserByName(upToken.getUsername());
-        if(user==null){
+
+        User user = null;//userService.findById("a");
+        if(user == null){
             return null;
         }else{
             AuthenticationInfo info = new SimpleAuthenticationInfo(user, user.getPassword(), getName());

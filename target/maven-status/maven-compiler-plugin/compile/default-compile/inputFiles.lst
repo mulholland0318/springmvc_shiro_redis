@@ -1,5 +1,6 @@
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\model\Module.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\interceptor\IndexInterceptor.java
+D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\listener\MySessionListener.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\service\UserService.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\util\Encrypt.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\constant\SysConstant.java
@@ -7,6 +8,7 @@ D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\model\Dept.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\service\UserCacheService.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\redis\RedisCacheManager.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\mybatis\mapper\UserDao.java
+D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\listener\MyClassSessionListener.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\redis\RedisSessionDAO.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\controller\UserController.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\AuthReam.java
@@ -15,11 +17,13 @@ D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\controller\BaseCont
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\model\Role.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\redis\RedisCache.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\dao\UserDaoTypeTwo.java
+D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\web\exception\DefaultExceptionHandler.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\dao\UserDaoTypeOne.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\model\User.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\mybatis\model\User.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\redis\SerializeUtils.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\mybatis\mapper\UserMapper.java
+D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\controller\RoleController.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\mybatis\mapper\SqlMapper.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\shiro\CommonMatcher.java
 D:\githubproject\springMVC_shiro_redis\src\main\java\com\lug\plugin\PagePlugin.java

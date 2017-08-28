@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
       ">
+
         <!--spring与mybatis配置的第一种方式-->
         <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
                 <property name="dataSource" ref="dataSource"/>
@@ -47,18 +48,18 @@
         <!--没 有 必 要 去 指 定 SqlSessionFactory 或 SqlSessionTemplate , 因 为 MapperScannerConfigurer 将会创建 MapperFactoryBean,之后自动装配
         。但是,如果你使 用了一个 以上的 DataSource ,那 么自动 装配可 能会失效 -->
         <!--第三种方式，推荐该方式，自动扫描管理mapper接口，不需要编写太多代码-->
-        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer" >
                 <!--注入SqlSessionFactory-->
                <!-- <property name="sqlSessionTemplateBeanName" value="sqlSessionTemplate"/>-->
                 <!--注意该属性不使用ref注入，使用value注入-->
                 <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-                <property name="basePackage" value="com.lug.mybatis.mapper"/>
-                <property name="markerInterface" value="com.lug.mybatis.mapper.SqlMapper"/>
+                <property name="basePackage" value="com.lug.mybatis.mapper"/><!--
+                <property name="markerInterface" value="com.lug.mybatis.mapper.SqlMapper"/>-->
         </bean>
 
         <!-- 5:日志管理-->
-        <bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
+        <!--<bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
                 <property name="resultSetLogEnabled" value="true"/>
-        </bean>
+        </bean>-->
 
 </beans>

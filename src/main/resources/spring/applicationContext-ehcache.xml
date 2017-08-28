@@ -15,5 +15,5 @@
                 <property name="cacheManager" ref="eheache"/>
         </bean>
 
-        <cache:annotation-driven cache-manager="cacheManager"/>
+        <cache:annotation-driven cache-manager="cacheManager" proxy-target-class="false"/>
 </beans>

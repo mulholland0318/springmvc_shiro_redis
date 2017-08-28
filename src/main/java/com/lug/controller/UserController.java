@@ -2,6 +2,7 @@ package com.lug.controller;
 
 import com.lug.mybatis.model.User;
 import com.lug.service.UserCacheService;
+import com.lug.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +15,8 @@ import javax.annotation.Resource;
 @RequestMapping("/user")
 public class UserController extends BaseController{
 
-    @Resource(name="userCacheService")
-    private UserCacheService service;
+    @Resource
+    private UserService service;
 
     @RequestMapping("/save")
     @ResponseBody

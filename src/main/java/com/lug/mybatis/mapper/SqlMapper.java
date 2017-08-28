@@ -6,7 +6,6 @@ import org.mybatis.spring.annotation.MapperScan;
 
 import java.util.List;
 
-@MapperScan("baseMapper")
 public interface SqlMapper<T> {
     public long save(T t);
 

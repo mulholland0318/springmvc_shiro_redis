@@ -25,6 +25,9 @@
         select * from user
     </select>
 
+    <select id ="findById" parameterType="String" resultType="User">
+        select *  from user where id = #{id}
+    </select>
 
     <select id="findAll" resultType="User">
         select * from user

@@ -2,6 +2,7 @@ package com.lug.controller;
 
 
 import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,7 @@ public class IndexController {
         return "index";
     }
 
+    @RequiresRoles("admin")
     @RequestMapping("/hello")
     public String hello(){
         System.out.println("hello");

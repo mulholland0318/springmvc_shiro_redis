@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.UUID;
 
-@ContextConfiguration(locations = {"classpath:spring/applicationContext-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath:spring/applicationContext.xml"})
 @RunWith( SpringJUnit4ClassRunner.class)
 public class UserServiceTest extends AbstractJUnit4SpringContextTests{
     @Resource(name="userService")
@@ -43,7 +43,7 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests{
     }
 
 
-    @Test
+   /* @Test
     public void deleteByPhone(){
         String phone = "13516269745";
         long size = service.deleteByPhone(phone);
@@ -162,7 +162,7 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests{
         service.saveOne(user);
     }
 
-
+*/
 
 
     @Test
@@ -175,8 +175,13 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests{
         service.save(user);
     }
 
-
     @Test
+    public void findUser(){
+        User user = service.findById("640904d06b7d407f82249e16061b7be6");
+        System.out.println(user.getId());
+    }
+
+   /* @Test
     public void saveDaoTest(){
         User user = new User();
         user.setId(UUID.randomUUID().toString().replace("-",""));
@@ -184,5 +189,5 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests{
         user.setPassword("password");
         user.setPhone("13516269745");
         service.saveDao(user);
-    }
+    }*/
 }

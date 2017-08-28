@@ -11,9 +11,10 @@
       http://www.springframework.org/schema/tx/spring-tx.xsd
       http://www.springframework.org/schema/context
       http://www.springframework.org/schema/context/spring-context.xsd">
-
+        <import resource="applicationContext-mybatis.xml"/>
+        <import resource="applicationContext-shiro.xml"/>
         <!-- 扫描包Service实现类 -->
-        <context:component-scan base-package="com.lug.service,com.lug.mybatis,com.lug.dao"/>
+        <context:component-scan base-package="com.lug"/>
 
 
         <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -32,7 +33,7 @@
         </aop:config>
 
         <!--配置事务行为，配置需要事务的方法-->
-        <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:advice id="txAdvice" transaction-manager="transactionManager" >
                 <tx:attributes>
                         <tx:method name="save*"   read-only="false" isolation="READ_COMMITTED" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
                         <tx:method name="update*" read-only="false" isolation="READ_COMMITTED" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
@@ -45,7 +46,6 @@
         <!--开启事务管理-->
         <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
                 <property name="dataSource" ref="dataSource"/>
-
 
         </bean>
         <!--druid 配置数据源-->
@@ -77,13 +77,13 @@
                 <property name="maxPoolPreparedStatementPerConnectionSize" value="${maxPoolPreparedStatementPerConnection}"/>
 
                 <!--开启druid 访问数据统计 stat   配置监控统计拦截的filters-->
-                <property name="filters" value="log4j"/>
-                <property name="proxyFilters">
+                <property name="filters" value="mergeStat"/>
+                <!--<property name="proxyFilters">
                         <list>
                                 <ref bean="stat-filter"/>
                                 <ref bean="wall-filter"/>
                         </list>
-                </property>
+                </property>-->
         </bean>
 
         <bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
